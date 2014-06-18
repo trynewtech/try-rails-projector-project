@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Rails projects!
+  ul
+    each project in projects
+      li 
+        a(href='http://#{project.ip}:#{project.port}') #{project.name}'s Rails project
+  form(method='post')
+    input(type='text', name='name', placeholder='your name')
+    input(type='text', name='port', placeholder='your project\'s port number')
+    input(type='submit', value='Add my project!')
